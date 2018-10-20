@@ -1,0 +1,22 @@
+.wrapper {
+  width: 400px;
+  margin: 0 auto;
+
+  h4 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+
+    mat-form-field {
+      width: 250px;
+    }
+
+    button {
+      width: 120px;
+    }
+  }
+}

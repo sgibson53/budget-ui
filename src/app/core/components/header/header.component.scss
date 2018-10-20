@@ -1,0 +1,27 @@
+.wrapper {
+  width: 100%;
+  height: 120px;
+  background: #656565;
+  color: white;
+  display: flex;
+  padding: 25px 20px;
+  box-sizing: border-box;
+
+  & > div {
+    line-height: 70px;
+  }
+
+  .filler {
+    flex: 1;
+  }
+
+  .logo {
+    font-size: 40px;
+    margin-right: 150px;
+    cursor: pointer;
+  }
+
+  .login-message {
+    cursor: pointer;
+  }
+}

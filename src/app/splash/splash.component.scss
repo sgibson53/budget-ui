@@ -1,0 +1,31 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+
+  .wrapper {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .title-message {
+      font-size: 92px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .login-buttons {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+      color: rgb(168, 168, 168);
+      cursor: pointer;
+
+      & > :last-child {
+        margin-left: 200px;
+      }
+    }
+  }
+}
