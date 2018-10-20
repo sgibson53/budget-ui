@@ -11,7 +11,7 @@
     </li>
     <li *ngFor="let account of accounts">
       <div>{{account.name}}</div>
-      <div>{{account.amount | currency}}</div>
+      <div><span>{{account.amount | currency}}</span><span class="edit-icon"><svg-icon src="assets/icons/edit_icon.svg"></svg-icon></span></div>
     </li>
   </ul>
 </div>

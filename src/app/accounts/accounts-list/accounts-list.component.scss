@@ -42,6 +42,13 @@
 
       div {
         flex: 1;
+
+        .edit-icon {
+          margin-left: 5px;
+          position: relative;
+          top: 2px;
+          cursor: pointer;
+        }
       }
 
       div:first-child {

@@ -2,5 +2,5 @@
   <div class="logo">Budget</div>
   <app-header-nav></app-header-nav>
   <div class="filler"></div>
-  <div class="login-message">{{user ? user.firstName + ' ' + user.lastName : 'Login'}}</div>
+  <div class="login-message" [routerLink]="['/login/login']" >{{user ? user.firstName + ' ' + user.lastName : 'Login'}}</div>
 </div>

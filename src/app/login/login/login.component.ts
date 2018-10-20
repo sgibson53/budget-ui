@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
         username: user.username,
         password: null,
         firstName: user.firstName,
-        lastName: user.lastName
+        lastName: user.lastName,
+        _id: user._id
       });
       this.router.navigate(["/"]);
     });

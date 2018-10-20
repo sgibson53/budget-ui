@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Add-Account" transform="translate(-765.000000, -293.000000)">
+            <g id="Table" transform="translate(216.000000, 231.000000)">
+                <g id="Edit-Icon" transform="translate(560.788582, 73.788582) rotate(-45.000000) translate(-560.788582, -73.788582) translate(545.288582, 69.788582)">
+                    <path d="M26.7884713,6.60374256 C28.5474965,6.60374256 30.2421727,5.13491213 30.2421727,3.59661366 C30.2421727,2.05831519 28.2708804,0.589484751 26.5118553,0.589484751 C24.7528302,0.589484751 23.6131462,2.11063576 23.6131462,3.64893423 C23.6131462,5.1872327 25.0294462,6.60374256 26.7884713,6.60374256 Z" id="Oval" fill="#D8D8D8"></path>
+                    <rect id="Rectangle-5" fill="#D8D8D8" x="5.62783161" y="0.597786498" width="21.2981319" height="6.01903728"></rect>
+                    <polygon id="Triangle" fill="#D8D8D8" transform="translate(3.081316, 3.607305) scale(-1, -1) rotate(90.000000) translate(-3.081316, -3.607305) " points="3.08131584 0.597786498 6.09083447 6.61682377 0.0717971975 6.61682377"></polygon>
+                    <rect stroke="#B9B9B9" fill="#B9B9B9" x="26.4999578" y="0.63478363" width="1" height="5.94504301" rx="0.5"></rect>
+                    <rect stroke="#B9B9B9" fill="#B9B9B9" x="6.12783161" y="0.63478363" width="1" height="5.94504301" rx="0.5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

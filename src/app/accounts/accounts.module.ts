@@ -4,9 +4,15 @@ import { AccountsComponent } from "./accounts/accounts.component";
 import { AccountsListComponent } from "./accounts-list/accounts-list.component";
 import { AccountsRoutingModule } from "./accounts-routing.module";
 import { FormsModule } from "@angular/forms";
+import { AngularSvgIconModule } from "angular-svg-icon";
 
 @NgModule({
-  imports: [CommonModule, AccountsRoutingModule, FormsModule],
+  imports: [
+    CommonModule,
+    AccountsRoutingModule,
+    FormsModule,
+    AngularSvgIconModule
+  ],
   declarations: [AccountsComponent, AccountsListComponent]
 })
 export class AccountsModule {}
