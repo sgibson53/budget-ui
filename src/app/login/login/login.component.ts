@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { User } from "../../core/models/user.model";
 import { LoginService } from "../../core/services/login.service";
 import { UserService } from "../../core/services/user.service";
 import * as jwtDecode from "jwt-decode";
@@ -36,6 +35,7 @@ export class LoginComponent implements OnInit {
         lastName: user.lastName,
         _id: user._id
       });
+      localStorage.setItem("token", res.token);
       this.router.navigate(["/"]);
     });
   }

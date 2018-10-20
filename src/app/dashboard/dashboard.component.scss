@@ -1,0 +1,16 @@
+.dashboard-wrapper {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+
+  .total {
+    margin-top: 15px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+
+    span {
+      font-size: 34px;
+    }
+  }
+}
