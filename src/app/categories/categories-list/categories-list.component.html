@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="categories-input-wrapper">
-    <span (click)="onAddcategory()">+</span><input class="categories-input" placeholder="Chase Savings, etc." [(ngModel)]="category.name"
+    <span (click)="onAddCategory()">+</span><input class="categories-input" placeholder="Rent, Vacation, Insurance, etc" [(ngModel)]="category.name"
       type="text">
   </div>
 
@@ -10,8 +10,10 @@
       <div>Amount</div>
     </li>
     <li *ngFor="let category of categories">
-      <div>{{category.name}}</div>
-      <div><span>{{category.amount | currency}}</span><span class="edit-icon"><svg-icon src="assets/icons/edit_icon.svg"></svg-icon></span></div>
+      <app-category-item [category]="category"></app-category-item>
     </li>
   </ul>
+  <div class="snapshot-wrapper">
+    <div class="snapshot-button" (click)="saveSnapshot()">Save Snapshot</div>
+  </div>
 </div>

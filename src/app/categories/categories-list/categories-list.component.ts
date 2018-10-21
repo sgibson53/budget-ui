@@ -4,6 +4,8 @@ import { Subscription } from "rxjs";
 import { Category } from "src/app/core/models/category.model";
 import { CategoryService } from "src/app/core/services/category.service";
 import { UserService } from "src/app/core/services/user.service";
+import { Snapshot } from "src/app/core/models/snapshot.model";
+import { SnapshotService } from "src/app/core/services/snapshot.service";
 
 @Component({
   selector: "app-categories-list",
@@ -23,7 +25,8 @@ export class CategoriesListComponent implements OnInit, OnDestroy {
 
   constructor(
     private categoryService: CategoryService,
-    private userService: UserService
+    private userService: UserService,
+    private snapshotService: SnapshotService
   ) {}
 
   ngOnInit() {
@@ -42,11 +45,19 @@ export class CategoriesListComponent implements OnInit, OnDestroy {
   }
 
   onAddCategory() {
-    this.categoryService
-      .addCategory(this.category)
-      .subscribe(
-        (category: Category) =>
-          (this.categories = [...this.categories, this.category])
-      );
+    this.categoryService.addCategory(this.category).subscribe((res: any) => {
+      this.category = res.category;
+      this.categories = [...this.categories, { ...this.category }];
+    });
+  }
+
+  saveSnapshot() {
+    const snapshot: Snapshot = {
+      timestamp: new Date(),
+      user_id: this.user._id,
+      categories: this.categories
+    };
+
+    this.snapshotService.addSnapshot(snapshot).subscribe();
   }
 }

@@ -1,0 +1,4 @@
+<div class="category-item-wrapper">
+  <div>{{category.name}}</div>
+  <div><input class="input-box" (keyup)="attemptSubmit($event)" #inputBox [value]="category.amount | currency" disabled><span class="edit-icon"><svg-icon src="assets/icons/edit_icon.svg" (click)="editCategory()"></svg-icon></span></div>
+</div>

@@ -24,6 +24,7 @@
       width: 600px;
       font-size: 24px;
       line-height: 36px;
+      padding: 5px;
       border: 1px solid black;
     }
   }
@@ -54,6 +55,22 @@
       div:first-child {
         flex: 3;
       }
+    }
+  }
+
+  .snapshot-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+
+    .snapshot-button {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 3px;
+      background: #5a5a5a;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
     }
   }
 }

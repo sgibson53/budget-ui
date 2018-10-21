@@ -1,0 +1,4 @@
+<div class="account-item-wrapper">
+  <div>{{account.name}}</div>
+  <div><input class="input-box" (keyup)="attemptSubmit($event)" #inputBox [value]="account.amount | currency" disabled><span class="edit-icon"><svg-icon src="assets/icons/edit_icon.svg" (click)="editAccount()"></svg-icon></span></div>
+</div>

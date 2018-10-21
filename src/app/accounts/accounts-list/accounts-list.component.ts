@@ -42,10 +42,11 @@ export class AccountsListComponent implements OnInit, OnDestroy {
   }
 
   onAddAccount() {
-    this.accountService
-      .addAccount(this.account)
-      .subscribe(
-        (account: Account) => (this.accounts = [...this.accounts, this.account])
-      );
+    this.accountService.addAccount(this.account).subscribe((res: any) => {
+      if (res.success) {
+        this.account = res.account;
+        this.accounts = [...this.accounts, { ...this.account }];
+      }
+    });
   }
 }

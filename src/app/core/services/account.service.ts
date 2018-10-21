@@ -13,9 +13,9 @@ export class AccountService {
     return this.http.get<Account[]>("http://localhost:3000/api/accounts");
   }
 
-  updateAccount(id: string, account: Account): Observable<Account> {
+  updateAccount(account: Account): Observable<Account> {
     return this.http.put<Account>(
-      `http://localhost:3000/api/edit-account/${id}`,
+      `http://localhost:3000/api/edit-account/${account._id}`,
       account
     );
   }

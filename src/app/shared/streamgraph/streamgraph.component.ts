@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, OnChanges } from "@angular/core";
 import { Chart, Highcharts } from "angular-highcharts";
 const colors = Highcharts.getOptions().colors;
 
@@ -7,8 +7,12 @@ const colors = Highcharts.getOptions().colors;
   templateUrl: "./streamgraph.component.html",
   styleUrls: ["./streamgraph.component.scss"]
 })
-export class StreamgraphComponent implements OnInit {
+export class StreamgraphComponent implements OnInit, OnChanges {
   public chart: Chart;
+  @Input()
+  series;
+  @Input()
+  categories;
 
   constructor() {}
 
@@ -18,6 +22,12 @@ export class StreamgraphComponent implements OnInit {
         type: "streamgraph",
         marginBottom: 30,
         zoomType: "x"
+      },
+      credits: {
+        enabled: false
+      },
+      exporting: {
+        enabled: false
       },
 
       // Make sure connected countries have similar colors
@@ -46,23 +56,13 @@ export class StreamgraphComponent implements OnInit {
         floating: true,
         align: "left",
         y: 30,
-        text: "monthly category amounts"
+        text: "historical view of amounts"
       },
 
       xAxis: {
         maxPadding: 0,
         type: "category",
         crosshair: true,
-        categories: [
-          "",
-          "January 2018",
-          "February 2018",
-          "March 2018",
-          "April 2018",
-          "May 2018",
-          "June 2018",
-          "July 2018"
-        ],
         labels: {
           align: "left",
           reserveSpace: false,
@@ -71,6 +71,7 @@ export class StreamgraphComponent implements OnInit {
         lineWidth: 0,
         tickWidth: 0
       },
+      series: [],
 
       yAxis: {
         visible: false,
@@ -80,48 +81,30 @@ export class StreamgraphComponent implements OnInit {
 
       legend: {
         enabled: false
-      },
-
-      plotOptions: {
-        series: {
-          // label: {
-          //   // minFontSize: 5,
-          //   // maxFontSize: 15,
-          //   style: {
-          //     color: "rgba(255,255,255,0.75)"
-          //   }
-          // }
-        }
-      },
-
-      // Data parsed with olympic-medals.node.js
-      series: [
-        {
-          name: "Emergency Savings",
-          data: [100, 150, 250, 350, 350, 400, 500, 600]
-        },
-        {
-          name: "Cash",
-          data: [100, 150, 250, 350, 350, 400, 500, 600]
-        },
-        {
-          name: "Silver",
-          data: [100, 150, 250, 350, 350, 400, 500, 600]
-        },
-        {
-          name: "Christmas",
-          data: [100, 150, 250, 350, 350, 400, 500, 600]
-        },
-        {
-          name: "Vacation",
-          data: [100, 150, 250, 350, 350, 400, 500, 600]
-        }
-      ],
-
-      exporting: {
-        sourceWidth: 800,
-        sourceHeight: 600
       }
     });
+  }
+
+  ngOnChanges() {
+    if (this.series && this.categories) {
+      this.updateChart();
+    }
+  }
+
+  updateChart() {
+    if (!this.chart || !this.chart.ref) {
+      return;
+    }
+
+    this.chart.ref.update(
+      {
+        xAxis: {
+          categories: this.categories
+        },
+        series: this.series
+      },
+      true,
+      true
+    );
   }
 }

@@ -1,0 +1,30 @@
+:host {
+  width: 100%;
+}
+
+.category-item-wrapper {
+  display: flex;
+  line-height: 52px;
+
+  div {
+    flex: 1;
+
+    .edit-icon {
+      margin-left: 5px;
+      position: relative;
+      top: 2px;
+      cursor: pointer;
+    }
+
+    .input-box {
+      border-width: 1px;
+      border-color: transparent;
+      font-size: 24px;
+      padding: 5px;
+    }
+  }
+
+  div:first-child {
+    flex: 3;
+  }
+}

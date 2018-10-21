@@ -13,9 +13,9 @@ export class CategoryService {
     return this.http.get<Category[]>("http://localhost:3000/api/categories");
   }
 
-  updateCategory(id: string, category: Category): Observable<Category> {
+  updateCategory(category: Category): Observable<Category> {
     return this.http.put<Category>(
-      `http://localhost:3000/api/edit-category/${id}`,
+      `http://localhost:3000/api/edit-category/${category._id}`,
       category
     );
   }

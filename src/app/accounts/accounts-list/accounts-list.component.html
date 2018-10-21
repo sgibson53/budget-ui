@@ -10,8 +10,7 @@
       <div>Amount</div>
     </li>
     <li *ngFor="let account of accounts">
-      <div>{{account.name}}</div>
-      <div><span>{{account.amount | currency}}</span><span class="edit-icon"><svg-icon src="assets/icons/edit_icon.svg"></svg-icon></span></div>
+      <app-accounts-list-item [account]="account"></app-accounts-list-item>
     </li>
   </ul>
 </div>

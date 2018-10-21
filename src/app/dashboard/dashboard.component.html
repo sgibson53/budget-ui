@@ -1,3 +1,5 @@
 <div class="dashboard-wrapper">
     <div class="total">You have <span>{{total | currency}}</span> unallocated funds!</div>
+    <app-streamgraph [series]="streamData" [categories]="streamCategories"></app-streamgraph>
+    <app-pie [series]="pieData"></app-pie>
 </div>
