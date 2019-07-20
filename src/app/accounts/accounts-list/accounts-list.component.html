@@ -1,7 +1,12 @@
 <div class="wrapper">
   <div class="accounts-input-wrapper">
-    <span (click)="onAddAccount()">+</span><input class="accounts-input" placeholder="Chase Savings, etc." [(ngModel)]="account.name"
-      type="text">
+    <span (click)="onAddAccount()">+</span
+    ><input
+      class="accounts-input"
+      placeholder="{{ placeholder }}"
+      [(ngModel)]="account.name"
+      type="text"
+    />
   </div>
 
   <ul class="accounts-table">

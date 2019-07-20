@@ -14,12 +14,13 @@ export class AccountsListComponent implements OnInit, OnDestroy {
   accounts$: Subscription;
   accounts: Account[];
   account: Account = {
-    name: "Chase Savings, etc.",
+    name: "",
     amount: 0,
     user_id: null
   };
   user$: Subscription;
   user: User;
+  placeholder = "Chase Savings, etc.";
 
   constructor(
     private accountService: AccountService,

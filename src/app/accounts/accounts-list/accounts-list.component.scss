@@ -1,6 +1,9 @@
+@import "../../../color1.scss";
+
 .wrapper {
   width: 1200px;
   margin: 0 auto;
+  color: #252525;
 
   .accounts-input-wrapper {
     display: flex;
@@ -8,7 +11,7 @@
 
     span {
       font-size: 52px;
-      background: #656565;
+      background: $secondary1;
       color: white;
       border-radius: 10px;
       width: 52px;
@@ -26,6 +29,10 @@
       line-height: 36px;
       padding: 5px;
       border: 1px solid black;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+      }
     }
   }
 
